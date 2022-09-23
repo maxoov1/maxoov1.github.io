@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        *, *::after, *::before {
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            margin: 0;
+        }
+
+        .streams {
+            display: grid;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }        
+    </style>
+
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+        <h1>Stream Test</h1>
+
+        <form>
+            <input type="text" />
+            <button type="submit">Connect</button>
+        </form>
+    </div>
+
+    <div class="videos"></div>
+
+    <script src="https://unpkg.com/peerjs@1.4.7/dist/peerjs.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
