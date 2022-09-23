@@ -22,13 +22,17 @@ const form  = document.querySelector('form');
 const input = document.querySelector('form > input');
 
 let stream, video;
+
+const allowStreaming = document.querySelector('button.allow');
+allowStreaming.addEventListener('click', async () => {
+    stream = await getStream();
+    video  = createVideo(stream);
+});
+
 let peer = new Peer();
 
 peer.on('open', async id => {
     console.log(id);
-
-    stream = await getStream();
-    video  = createVideo(stream);
 });
 
 peer.on('call', call => {
