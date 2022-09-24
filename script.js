@@ -1,6 +1,8 @@
 const getStream = async () => {
     try {
-        const stream = await navigator.mediaDevices.getDisplayMedia();
+        const stream = await navigator.mediaDevices.getDisplayMedia({
+            video: { width: 1280, height: 720, frameRate: 60 }
+        });
         return stream;
     } catch (err) {
         console.error("error", err);
